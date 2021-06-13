@@ -91,13 +91,16 @@ ChatBot::ChatBot (ChatBot &&source)
 {
     std::cout << "Chatbot Move Constructor" << std::endl;
     //owned
+    /*      //correction, no need for deep copy here
     _image = new wxBitmap();
     *_image = *source._image;
+    */
+    _image = source._image;
 
     // deallocate heap memory
     if(source._image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
-        delete source._image;
+        //delete source._image;
         source._image = NULL;
     }
 
@@ -119,16 +122,20 @@ ChatBot &ChatBot::operator=(ChatBot &&source)
 {
     std::cout << "Chatbot Move Assignment Operator" << std::endl;
     //owned
+    /*      //correction, no need for deep copy here
     _image = new wxBitmap();
     *_image = *source._image;
+    */
+     _image = source._image;
 
+    
     // deallocate heap memory
     if(source._image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
-        delete source._image;
+        //delete source._image;
         source._image = NULL;
     }
-
+    
     //not owned
     _currentNode = source. _currentNode;
     _rootNode = source._rootNode;
@@ -139,7 +146,7 @@ ChatBot &ChatBot::operator=(ChatBot &&source)
     source. _currentNode = nullptr;
     source._rootNode = nullptr;
     source._chatLogic = nullptr;
-
+    
     return *this;
     
 }
