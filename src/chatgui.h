@@ -14,14 +14,9 @@ private:
     wxBoxSizer *_dialogSizer;
     wxBitmap _image;
 
-    //// STUDENT CODE
-    ////
-
     //ChatLogic *_chatLogic;       //deleted for task 1
     std::unique_ptr<ChatLogic> _chatLogic;
 
-    ////
-    //// EOF STUDENT CODE
 
 public:
     // constructor / destructor
