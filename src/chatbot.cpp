@@ -43,8 +43,6 @@ ChatBot::~ChatBot()
     
 }
 
-//// STUDENT CODE     task 2
-////
 
 //*******************Copy constructor
 ChatBot::ChatBot (const ChatBot &source)
@@ -151,8 +149,6 @@ ChatBot &ChatBot::operator=(ChatBot &&source)
     
 }
 
-////
-//// EOF STUDENT CODE    task 2
 
 void ChatBot::ReceiveMessageFromUser(std::string message)
 {
